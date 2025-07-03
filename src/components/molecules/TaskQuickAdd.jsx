@@ -157,15 +157,15 @@ const TaskQuickAdd = ({ onAddTask, categories = [] }) => {
                   Category
                 </label>
                 <Select
+placeholder="Select category"
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
-                  disabled={isLoading}
                   className="w-full"
                 >
-                  <option value="">No category</option>
-                  {categoryOptions.map(option => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
+                  <option key="no-category" value="">No category</option>
+                  {(categories || []).map(cat => (
+                    <option key={cat.id || cat.name} value={cat.id || cat.name}>
+                      {cat.name}
                     </option>
                   ))}
                 </Select>
