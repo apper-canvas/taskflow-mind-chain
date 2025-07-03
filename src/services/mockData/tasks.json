@@ -1,0 +1,82 @@
+[
+  {
+    "Id": 1,
+    "title": "Review quarterly reports",
+    "completed": false,
+    "priority": "high",
+    "dueDate": "2024-01-15",
+    "categoryId": 1,
+    "createdAt": "2024-01-10T09:00:00Z",
+    "completedAt": null
+  },
+  {
+    "Id": 2,
+    "title": "Schedule dentist appointment",
+    "completed": false,
+    "priority": "medium",
+    "dueDate": "2024-01-12",
+    "categoryId": 3,
+    "createdAt": "2024-01-09T14:30:00Z",
+    "completedAt": null
+  },
+  {
+    "Id": 3,
+    "title": "Read React documentation",
+    "completed": true,
+    "priority": "low",
+    "dueDate": "2024-01-08",
+    "categoryId": 4,
+    "createdAt": "2024-01-05T10:15:00Z",
+    "completedAt": "2024-01-08T16:45:00Z"
+  },
+  {
+    "Id": 4,
+    "title": "Update budget spreadsheet",
+    "completed": false,
+    "priority": "medium",
+    "dueDate": "2024-01-20",
+    "categoryId": 5,
+    "createdAt": "2024-01-10T11:20:00Z",
+    "completedAt": null
+  },
+  {
+    "Id": 5,
+    "title": "Clean garage",
+    "completed": false,
+    "priority": "low",
+    "dueDate": "2024-01-18",
+    "categoryId": 6,
+    "createdAt": "2024-01-09T08:00:00Z",
+    "completedAt": null
+  },
+  {
+    "Id": 6,
+    "title": "Call mom",
+    "completed": false,
+    "priority": "high",
+    "dueDate": "2024-01-11",
+    "categoryId": 2,
+    "createdAt": "2024-01-10T20:00:00Z",
+    "completedAt": null
+  },
+  {
+    "Id": 7,
+    "title": "Prepare presentation slides",
+    "completed": false,
+    "priority": "high",
+    "dueDate": "2024-01-14",
+    "categoryId": 1,
+    "createdAt": "2024-01-10T13:45:00Z",
+    "completedAt": null
+  },
+  {
+    "Id": 8,
+    "title": "Go for a 30-minute walk",
+    "completed": true,
+    "priority": "medium",
+    "dueDate": "2024-01-10",
+    "categoryId": 3,
+    "createdAt": "2024-01-10T07:00:00Z",
+    "completedAt": "2024-01-10T18:30:00Z"
+  }
+]
