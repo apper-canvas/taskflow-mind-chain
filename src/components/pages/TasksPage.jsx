@@ -104,49 +104,55 @@ function TasksPage() {
     )
   }
 
-  return (
+return (
     <Layout>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="space-y-6"
-      >
-        {/* Quick Add Task */}
-        <TaskQuickAdd 
-          onAddTask={handleAddTask}
-          categories={categories || []}
-        />
-
-        {/* Filter Bar */}
-        <FilterBar
-          categories={categories || []}
-          activeFilters={activeFilters}
-          onFilterChange={handleFilterChange}
-        />
-
-        {/* Task List */}
-        {filteredTasks.length === 0 ? (
-          <Empty 
-            title="No tasks found"
-            description={
-              activeFilters.search || 
-              activeFilters.category !== 'all' || 
-              activeFilters.priority !== 'all' || 
-              activeFilters.status !== 'all'
-                ? "Try adjusting your filters to see more tasks."
-                : "Get started by adding your first task above."
-            }
-          />
-        ) : (
-          <TaskList
-            tasks={filteredTasks}
-            onUpdateTask={handleUpdateTask}
-            onDeleteTask={handleDeleteTask}
+      {({ selectedCategory, isViewMode }) => (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="space-y-6"
+        >
+          {/* Quick Add Task */}
+          <TaskQuickAdd 
+            onAddTask={handleAddTask}
             categories={categories || []}
           />
-        )}
-      </motion.div>
+
+          {/* Filter Bar - only show when not in view mode */}
+          {!isViewMode && (
+            <FilterBar
+              categories={categories || []}
+              activeFilters={activeFilters}
+              onFilterChange={handleFilterChange}
+            />
+          )}
+
+          {/* Task List */}
+          {filteredTasks.length === 0 ? (
+            <Empty 
+              title="No tasks found"
+              description={
+                activeFilters.search || 
+                activeFilters.category !== 'all' || 
+                activeFilters.priority !== 'all' || 
+                activeFilters.status !== 'all'
+                  ? "Try adjusting your filters to see more tasks."
+                  : "Get started by adding your first task above."
+              }
+            />
+          ) : (
+            <TaskList
+              tasks={filteredTasks}
+              onUpdateTask={handleUpdateTask}
+              onDeleteTask={handleDeleteTask}
+              categories={categories || []}
+              selectedCategory={selectedCategory}
+              isViewMode={isViewMode}
+            />
+          )}
+        </motion.div>
+      )}
     </Layout>
   )
 }

@@ -5,6 +5,7 @@ const CategorySidebar = ({
   categories, 
   selectedCategory, 
   onSelectCategory, 
+  onEnterViewMode,
   tasks,
   isMobile = false,
   onClose 
@@ -34,11 +35,11 @@ const CategorySidebar = ({
 
       {/* All Tasks */}
       <div className="space-y-1">
-        <motion.button
+<motion.button
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           onClick={() => {
-            onSelectCategory(null);
+            onEnterViewMode();
             isMobile && onClose();
           }}
           className={`w-full flex items-center justify-between p-3 rounded-lg transition-all duration-200 ${

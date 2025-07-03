@@ -16,7 +16,8 @@ const TaskList = ({
   onEdit, 
   onDelete,
   selectedCategory,
-  onRetry 
+  onRetry,
+  isViewMode = false
 }) => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [sortBy, setSortBy] = useState('dueDate');
@@ -134,17 +135,18 @@ case 'priority': {
     };
   };
 
-  return (
+return (
     <div className="space-y-6">
-      <FilterBar
-        activeFilter={activeFilter}
-        setActiveFilter={setActiveFilter}
-        sortBy={sortBy}
-        setSortBy={setSortBy}
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
-      />
-
+      {!isViewMode && (
+        <FilterBar
+          activeFilter={activeFilter}
+          setActiveFilter={setActiveFilter}
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+        />
+      )}
       <AnimatePresence mode="wait">
         {filteredAndSortedTasks.length === 0 ? (
           <Empty {...getEmptyStateProps()} />
