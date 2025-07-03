@@ -63,10 +63,10 @@ const TaskList = ({
           if (!b.dueDate) return -1;
           return compareAsc(parseISO(a.dueDate), parseISO(b.dueDate));
         
-        case 'priority':
+case 'priority': {
           const priorityOrder = { high: 3, medium: 2, low: 1 };
           return priorityOrder[b.priority] - priorityOrder[a.priority];
-        
+        }
         case 'created':
           return compareDesc(new Date(a.createdAt), new Date(b.createdAt));
         
